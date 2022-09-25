@@ -28,4 +28,4 @@ Route::get('login-google',[SocialController::class,'googleRedirect'])->name('log
 Route::get('login-google-callback',[SocialController::class,'loginWithGoogle'])->name('login.google.callback');
 
 Route::get('login-github',[SocialController::class,'githubRedirect'])->name('login.github');
-Route::get('/login-github-callback',[SocialController::class,'loginWithGithub'])->name('login.github.callback');
+Route::get('login-github-callback',[SocialController::class,'loginWithGithub'])->name('login.github.callback');

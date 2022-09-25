@@ -17,17 +17,17 @@ class SocialController extends Controller
 
     public function loginWithFacebook(){
 
-        $user = Socialite::driver('facebook')->stateless()->user();
-        $findUser= User::where('facebook_id',$user->id)->first();
+        $user       = Socialite::driver('facebook')->stateless()->user();
+        $findUser   = User::where('facebook_id',$user->id)->first();
         if ($findUser){
             Auth::login($findUser);
             return redirect('home');
         }else{
-            $new_user = new User();
-            $new_user->name = $user->name;
-            $new_user->email = $user->email;
-            $new_user->facebook_id = $user->id;
-            $new_user->password =bcrypt('123456');
+            $new_user               = new User();
+            $new_user->name         = $user->name;
+            $new_user->email        = $user->email;
+            $new_user->facebook_id  = $user->id;
+            $new_user->password     = bcrypt('123456');
             $new_user->save();
             Auth::login($new_user);
             return  redirect('home');
@@ -51,11 +51,11 @@ class SocialController extends Controller
             Auth::login($findUser);
             return redirect('home');
         }else{
-            $new_user = new User();
-            $new_user->name = $user->name;
-            $new_user->email = $user->email;
+            $new_user            = new User();
+            $new_user->name      = $user->name;
+            $new_user->email     = $user->email;
             $new_user->google_id = $user->id;
-            $new_user->password =bcrypt('123456');
+            $new_user->password  = bcrypt('123456');
             $new_user->save();
             Auth::login($new_user);
             return  redirect('home');
@@ -80,11 +80,11 @@ class SocialController extends Controller
             Auth::login($findUser);
             return redirect('home');
         }else{
-            $new_user = new User();
-            $new_user->name = $user->name;
-            $new_user->email = $user->email;
+            $new_user            = new User();
+            $new_user->name      = $user->name;
+            $new_user->email     = $user->email;
             $new_user->github_id = $user->id;
-            $new_user->password =bcrypt('123456');
+            $new_user->password  = bcrypt('123456');
             $new_user->save();
             Auth::login($new_user);
             return  redirect('home');

@@ -15,9 +15,26 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        svg.svg-inline--fa.fa-facebook {
+            font-size: 18px !important;
+            margin-top: 3px;
+        }
+        svg.svg-inline--fa.fa-github {
+            font-size: 17px !important;
+            margin-top: 4px;
+        }
+        svg.svg-inline--fa.fa-github {
+            font-size: 17px !important;
+            margin-top: 4px;
+        }
+    </style>
+
 </head>
 <body>
     <div id="app">
+        @yield('css')
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
