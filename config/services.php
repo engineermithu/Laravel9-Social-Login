@@ -45,7 +45,7 @@ return [
 
     'google' => [
         'client_id' => '850648167358-28i3oeimloo0l858te1o42mi78lpocer.apps.googleusercontent.com',
-        'client_secret' => '05f291cb7fc576d7d9aa2d1761462319b79523b2',
+        'client_secret' => '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',
         'redirect' => 'http://localhost:8000/login-google-callback',
     ],
 
